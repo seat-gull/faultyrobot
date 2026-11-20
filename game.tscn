@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dexd0ukp25yjv"]
+
+[ext_resource type="Texture2D" uid="uid://do5ggx3sfod5k" path="res://assets/pixil-frame-0 (8).png" id="1_80nbo"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_80nbo"]
+load_path = "res://.godot/imported/pixil-layer-Layer 3.png-073a43010f891be634ff8b9f758f6039.ctex"
+
+[node name="Control" type="Control" unique_id=1771415570]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="title screen" type="Sprite2D" parent="." unique_id=1033295239]
+position = Vector2(-1.0000005, -4.500003)
+scale = Vector2(1.6199999, 1.6099999)
+texture = ExtResource("1_80nbo")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=542191406]
+position = Vector2(-1, -4)
+zoom = Vector2(4, 4)
+
+[node name="Button" type="TextureButton" parent="." unique_id=1403689287]
+layout_mode = 0
+offset_left = 67.0
+offset_top = -98.0
+offset_right = 145.0
+offset_bottom = -79.48148
+scale = Vector2(1, 1.08)
+texture_normal = SubResource("CompressedTexture2D_80nbo")
+ignore_texture_size = true
+
+[node name="Button2" type="TextureButton" parent="." unique_id=2140478870]
+modulate = Color(1, 0.9490196, 0.88235295, 1)
+layout_mode = 0
+offset_left = 39.0
+offset_top = 33.0
+offset_right = 57.0
+offset_bottom = 49.0
+
+[node name="Button3" type="TextureButton" parent="." unique_id=1230662977]
+modulate = Color(1, 0.9490196, 0.88235295, 1)
+layout_mode = 0
+offset_left = 65.0
+offset_top = 33.0
+offset_right = 83.0
+offset_bottom = 49.0

@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://6htldtrf6qph"]
+
+[ext_resource type="Script" uid="uid://cv6nqrqudkl0t" path="res://scenes/title_page.gd" id="1_xsg0s"]
+[ext_resource type="Texture2D" uid="uid://do5ggx3sfod5k" path="res://assets/pixil-frame-0 (8).png" id="2_2lqaj"]
+[ext_resource type="Texture2D" uid="uid://djc6ynxsx66kc" path="res://assets/pixil-frame-2.png" id="3_i5gan"]
+[ext_resource type="Texture2D" uid="uid://b2s7r3x7ggu1l" path="res://assets/pixil-frame-1.png" id="4_251wa"]
+[ext_resource type="Texture2D" uid="uid://bxv8jfj06ogkc" path="res://assets/pixil-frame-3.png" id="5_h6hdv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_krhq8"]
+load_path = "res://.godot/imported/pixil-frame-0.png-0a2d8a803221ea592f483da0e0c43a31.ctex"
+
+[node name="Control" type="Control" unique_id=1771415570]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xsg0s")
+
+[node name="title screen" type="Sprite2D" parent="." unique_id=1033295239]
+position = Vector2(-1.0000005, -4.500003)
+scale = Vector2(1.6199999, 1.6099999)
+texture = ExtResource("2_2lqaj")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=542191406]
+position = Vector2(-1, -4)
+zoom = Vector2(4, 4)
+
+[node name="GO" type="TextureButton" parent="." unique_id=1403689287]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 31.0
+offset_right = 63.0
+offset_bottom = 47.66666
+scale = Vector2(1, 1.08)
+texture_normal = SubResource("CompressedTexture2D_krhq8")
+texture_pressed = ExtResource("3_i5gan")
+texture_hover = ExtResource("3_i5gan")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="END" type="TextureButton" parent="." unique_id=2140478870]
+modulate = Color(1, 0.9490196, 0.88235295, 1)
+layout_mode = 0
+offset_left = -57.0
+offset_top = 48.0
+offset_right = -21.0
+offset_bottom = 64.0
+texture_normal = ExtResource("4_251wa")
+texture_pressed = ExtResource("5_h6hdv")
+texture_hover = ExtResource("5_h6hdv")
+stretch_mode = 3
+
+[connection signal="pressed" from="GO" to="." method="_on_go_pressed"]
+[connection signal="pressed" from="END" to="." method="_on_end_pressed"]

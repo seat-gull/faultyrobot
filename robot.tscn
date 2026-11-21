@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://de3bih4n1qfe5"]
+
+[ext_resource type="Texture2D" uid="uid://bkpnlai66gvi0" path="res://assets/robot1.png" id="1_yhfw1"]
+[ext_resource type="Texture2D" uid="uid://2kiaxks8dmfx" path="res://assets/robot2.png" id="2_ru5oq"]
+[ext_resource type="Texture2D" uid="uid://ds4dyml1io754" path="res://assets/pixilart-sprite (3).png" id="2_yhfw1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru5oq"]
+atlas = ExtResource("2_yhfw1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xofo"]
+atlas = ExtResource("2_yhfw1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyxj1"]
+atlas = ExtResource("2_yhfw1")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vivr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yhfw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ru5oq")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru5oq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xofo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyxj1")
+}],
+"loop": 2,
+"name": &"move",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1918805104]
+position = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_1vivr")
+animation = &"move"
+autoplay = "idle"
+frame_progress = 0.6104461

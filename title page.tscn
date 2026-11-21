@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://6htldtrf6qph"]
 
 [ext_resource type="Texture2D" uid="uid://do5ggx3sfod5k" path="res://assets/pixil-frame-0 (8).png" id="1_nbtb7"]
+[ext_resource type="Script" uid="uid://cv6nqrqudkl0t" path="res://title_page.gd" id="1_stqae"]
 [ext_resource type="Texture2D" uid="uid://06akoocgjhnf" path="res://assets/2026_11_20_0uv_Kleki.png" id="2_eh2gw"]
 [ext_resource type="Texture2D" uid="uid://cdybcciuqpxaj" path="res://assets/2026_11_20_0ux_Kleki.png" id="3_rowgi"]
+[ext_resource type="Texture2D" uid="uid://dv2ux4ucx8sp3" path="res://assets/GO pressed.png" id="3_stqae"]
+[ext_resource type="Texture2D" uid="uid://b7qwcutmyrbb7" path="res://assets/End pressed.png" id="5_1o3jy"]
 
 [node name="Control" type="Control" unique_id=1771415570]
 layout_mode = 3
@@ -11,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_stqae")
 
 [node name="title screen" type="Sprite2D" parent="." unique_id=1033295239]
 position = Vector2(-1.0000005, -4.500003)
@@ -21,7 +25,7 @@ texture = ExtResource("1_nbtb7")
 position = Vector2(-1, -4)
 zoom = Vector2(4, 4)
 
-[node name="Button" type="TextureButton" parent="." unique_id=1403689287]
+[node name="GO" type="TextureButton" parent="." unique_id=1403689287]
 layout_mode = 0
 offset_left = 56.0
 offset_top = 42.0
@@ -29,9 +33,11 @@ offset_right = 76.0
 offset_bottom = 55.888885
 scale = Vector2(1, 1.08)
 texture_normal = ExtResource("2_eh2gw")
+texture_pressed = ExtResource("3_stqae")
+texture_hover = ExtResource("3_stqae")
 ignore_texture_size = true
 
-[node name="Button2" type="TextureButton" parent="." unique_id=2140478870]
+[node name="END" type="TextureButton" parent="." unique_id=2140478870]
 modulate = Color(1, 0.9490196, 0.88235295, 1)
 layout_mode = 0
 offset_left = 28.0
@@ -39,4 +45,9 @@ offset_top = 42.0
 offset_right = 55.0
 offset_bottom = 57.0
 texture_normal = ExtResource("3_rowgi")
+texture_pressed = ExtResource("5_1o3jy")
+texture_hover = ExtResource("5_1o3jy")
 stretch_mode = 0
+
+[connection signal="pressed" from="GO" to="." method="_on_go_pressed"]
+[connection signal="pressed" from="END" to="." method="_on_end_pressed"]

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://6htldtrf6qph"]
+
+[ext_resource type="Texture2D" uid="uid://do5ggx3sfod5k" path="res://assets/pixil-frame-0 (8).png" id="1_nbtb7"]
+[ext_resource type="Texture2D" uid="uid://06akoocgjhnf" path="res://assets/2026_11_20_0uv_Kleki.png" id="2_eh2gw"]
+[ext_resource type="Texture2D" uid="uid://cdybcciuqpxaj" path="res://assets/2026_11_20_0ux_Kleki.png" id="3_rowgi"]
+
+[node name="Control" type="Control" unique_id=1771415570]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="title screen" type="Sprite2D" parent="." unique_id=1033295239]
+position = Vector2(-1.0000005, -4.500003)
+scale = Vector2(1.6199999, 1.6099999)
+texture = ExtResource("1_nbtb7")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=542191406]
+position = Vector2(-1, -4)
+zoom = Vector2(4, 4)
+
+[node name="Button" type="TextureButton" parent="." unique_id=1403689287]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 42.0
+offset_right = 76.0
+offset_bottom = 55.888885
+scale = Vector2(1, 1.08)
+texture_normal = ExtResource("2_eh2gw")
+ignore_texture_size = true
+
+[node name="Button2" type="TextureButton" parent="." unique_id=2140478870]
+modulate = Color(1, 0.9490196, 0.88235295, 1)
+layout_mode = 0
+offset_left = 28.0
+offset_top = 42.0
+offset_right = 55.0
+offset_bottom = 57.0
+texture_normal = ExtResource("3_rowgi")
+stretch_mode = 0

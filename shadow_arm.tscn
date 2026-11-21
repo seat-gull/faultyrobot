@@ -1,33 +1,33 @@
-[gd_scene format=3 uid="uid://2w7slhm0kvdl"]
+[gd_scene format=3 uid="uid://cjg6qasl6lgm2"]
 
-[ext_resource type="Texture2D" uid="uid://detdy623axwuc" path="res://assets/pixilart-sprite.png" id="1_22xei"]
+[ext_resource type="Texture2D" uid="uid://detdy623axwuc" path="res://assets/pixilart-sprite.png" id="1_5es46"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qujof"]
-atlas = ExtResource("1_22xei")
+atlas = ExtResource("1_5es46")
 region = Rect2(0, 0, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_348n5"]
-atlas = ExtResource("1_22xei")
+atlas = ExtResource("1_5es46")
 region = Rect2(50, 0, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7wud7"]
-atlas = ExtResource("1_22xei")
+atlas = ExtResource("1_5es46")
 region = Rect2(100, 0, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wk1on"]
-atlas = ExtResource("1_22xei")
+atlas = ExtResource("1_5es46")
 region = Rect2(150, 0, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h4qhm"]
-atlas = ExtResource("1_22xei")
+atlas = ExtResource("1_5es46")
 region = Rect2(200, 0, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jnpi6"]
-atlas = ExtResource("1_22xei")
+atlas = ExtResource("1_5es46")
 region = Rect2(250, 0, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k2l7r"]
-atlas = ExtResource("1_22xei")
+atlas = ExtResource("1_5es46")
 region = Rect2(300, 0, 50, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vivr"]
@@ -59,7 +59,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1849435551]
+[node name="shadow arm" type="AnimatedSprite2D" unique_id=1849435551]
 sprite_frames = SubResource("SpriteFrames_1vivr")
 animation = &"grab"
-frame_progress = 0.9202262
+frame_progress = 0.025350925

@@ -1,11 +1,20 @@
 [gd_scene format=3 uid="uid://ds34ctjui2lja"]
 
-[ext_resource type="Script" uid="uid://mu3r62l0a20g" path="res://respawn_point.gd" id="1_b3bci"]
+[sub_resource type="GDScript" id="GDScript_nv20u"]
+script/source = "extends Area2D
+
+var respawn_point_manager 
+func _ready() -> void:
+	respawn_point_manager= get_parent().get_parent().get_node(\"RespawnManager\")
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"player\"):
+		respawn_point_manager.last_location= $marker.global_position
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vrlf"]
 
 [node name="respawn point" type="Area2D" unique_id=672425030]
-script = ExtResource("1_b3bci")
+script = SubResource("GDScript_nv20u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=994725072]
 shape = SubResource("RectangleShape2D_8vrlf")

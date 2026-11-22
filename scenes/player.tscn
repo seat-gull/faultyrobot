@@ -76,7 +76,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_8vrlf"]
 radius = 4.1231055
 
-[node name="player" type="CharacterBody2D" unique_id=1002693678 groups=["robot"]]
+[node name="Player" type="CharacterBody2D" unique_id=1002693678]
 collision_layer = 3
 script = SubResource("GDScript_b26j0")
 

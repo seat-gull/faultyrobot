@@ -12,7 +12,7 @@ script = ExtResource("1_luqgl")
 shape = SubResource("RectangleShape2D_8vrlf")
 
 [node name="RespawnPoint" type="Marker2D" parent="." unique_id=1937648438]
-position = Vector2(11, 0)
+position = Vector2(13, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="ready" from="RespawnPoint" to="." method="_on_marker_ready"]

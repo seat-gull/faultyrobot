@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://bd0ue2kp86p76" path="res://assets/blocks tile map.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://bvbtwj50kbe06" path="res://scenes/player.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://grox1kde8fp" path="res://scenes/killzone.tscn" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://d0g743jsoxeun" path="res://scenes/respawn_point_manager.gd" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://ds34ctjui2lja" path="res://respawn_point.tscn" id="5_p57ef"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqjtg"]
 texture = ExtResource("1_uwrxv")
@@ -43,6 +46,9 @@ tile_size = Vector2i(12, 12)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_yqjtg")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1vivr"]
+distance = -61.0
+
 [node name="game" type="Node2D" unique_id=697720961]
 
 [node name="day" type="TileMapLayer" parent="." unique_id=892179367]
@@ -55,3 +61,15 @@ tile_set = SubResource("TileSet_1vivr")
 
 [node name="player" parent="." unique_id=1002693678 instance=ExtResource("2_yqjtg")]
 position = Vector2(-30, 19)
+
+[node name="killzone" parent="." unique_id=1613416051 instance=ExtResource("3_lnu2h")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=753605235]
+position = Vector2(18, 60)
+shape = SubResource("WorldBoundaryShape2D_1vivr")
+
+[node name="respawn point manager" type="Node" parent="." unique_id=721352877]
+script = ExtResource("4_iywne")
+
+[node name="respawn point" parent="respawn point manager" unique_id=672425030 instance=ExtResource("5_p57ef")]
+position = Vector2(137, 26)

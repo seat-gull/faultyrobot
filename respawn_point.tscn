@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ds34ctjui2lja"]
+
+[ext_resource type="Script" uid="uid://mu3r62l0a20g" path="res://respawn_point.gd" id="1_b3bci"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vrlf"]
+
+[node name="respawn point" type="Area2D" unique_id=672425030]
+script = ExtResource("1_b3bci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=994725072]
+shape = SubResource("RectangleShape2D_8vrlf")
+
+[node name="marker" type="Marker2D" parent="." unique_id=1937648438]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

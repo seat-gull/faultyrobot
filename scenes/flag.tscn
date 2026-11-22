@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cd0eadm2268io"]
+
+[ext_resource type="Texture2D" uid="uid://mq138qe4845d" path="res://assets/flag.png" id="1_l1sgl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amn8n"]
+atlas = ExtResource("1_l1sgl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukulb"]
+atlas = ExtResource("1_l1sgl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts4f7"]
+atlas = ExtResource("1_l1sgl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8vrlf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amn8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukulb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ts4f7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="flag" type="Node2D" unique_id=1378758955]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=794541942]
+position = Vector2(-2.3841858e-07, 0)
+scale = Vector2(0.515625, 0.53125)
+sprite_frames = SubResource("SpriteFrames_8vrlf")
+autoplay = "default"
+frame_progress = 0.20679982

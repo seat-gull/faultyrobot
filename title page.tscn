@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dyiaelksl72id"]
+
+[ext_resource type="PackedScene" uid="uid://6htldtrf6qph" path="res://scenes/title page.tscn" id="1_fea00"]
+
+[node name="Control" unique_id=1771415570 instance=ExtResource("1_fea00")]
+
+[node name="GO" parent="." index="2" unique_id=1403689287]
+offset_left = -28.999992
+offset_top = -74.0
+offset_right = -10.999992
+offset_bottom = -61.770603
+scale = Vector2(3.1437657, 2.6459372)
+
+[node name="EXIT" parent="." index="3" unique_id=2140478870]
+offset_left = -49.0
+offset_top = 29.0
+offset_right = -13.0
+offset_bottom = 45.0
+scale = Vector2(2.729547, 2.5616553)

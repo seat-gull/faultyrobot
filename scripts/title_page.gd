@@ -1,19 +1,33 @@
 extends Control
 
+@onready var startSelector = $Camera2D/HBoxContainer/Selector
+@onready var exitSelector = $Camera2D/HBoxContainer2/Selector
 
-# Called when the node enters the scene tree for the first time.
+var current_selection = 0
+
+func set_current_selection(_current_selection):
+	startSelector.text = ""
+	exitSelector.text = ""
+	if _current_selection == 0:
+		startSelector.text = ">"
+	elif _current_selection == 1:
+		exitSelector.text = ">"
+	
 func _ready() -> void:
-	pass # Replace with function body.
+	set_current_selection(0)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("ui_down") and current_selection < 1:
+		current_selection += 1
+		set_current_selection(current_selection)
+	elif Input.is_action_just_pressed("ui_up") and current_selection > 0:
+		current_selection -= 1
+		set_current_selection(current_selection)
+	elif Input.is_action_just_pressed("ui_accept"):
+		handle_selection(current_selection)
 
-
-func _on_go_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
-
-
-func _on_end_pressed() -> void:
-	get_tree().quit()
+func handle_selection(_current_selection):
+	if _current_selection == 0:
+		get_tree().change_scene_to_file("res://scenes/game.tscn")
+	elif _current_selection == 1:
+		get_tree().quit()

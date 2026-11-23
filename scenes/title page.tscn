@@ -2,12 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cv6nqrqudkl0t" path="res://scripts/title_page.gd" id="1_xsg0s"]
 [ext_resource type="Texture2D" uid="uid://do5ggx3sfod5k" path="res://assets/pixil-frame-0 (8).png" id="2_2lqaj"]
-[ext_resource type="Texture2D" uid="uid://djc6ynxsx66kc" path="res://assets/pixil-frame-2.png" id="3_i5gan"]
-[ext_resource type="Texture2D" uid="uid://b2s7r3x7ggu1l" path="res://assets/pixil-frame-1.png" id="4_251wa"]
-[ext_resource type="Texture2D" uid="uid://bxv8jfj06ogkc" path="res://assets/pixil-frame-3.png" id="5_h6hdv"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_krhq8"]
-load_path = "res://.godot/imported/pixil-frame-0.png-0a2d8a803221ea592f483da0e0c43a31.ctex"
+[ext_resource type="FontFile" uid="uid://d0l4805io35to" path="res://assets/ChiKareGo.ttf" id="3_2lqaj"]
 
 [node name="Control" type="Control" unique_id=1771415570]
 layout_mode = 3
@@ -19,38 +14,54 @@ grow_vertical = 2
 script = ExtResource("1_xsg0s")
 
 [node name="title screen" type="Sprite2D" parent="." unique_id=1033295239]
-position = Vector2(-1.0000005, -4.500003)
 scale = Vector2(1.6199999, 1.6099999)
 texture = ExtResource("2_2lqaj")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=542191406]
-position = Vector2(-1, -4)
 zoom = Vector2(4, 4)
 
-[node name="GO" type="TextureButton" parent="." unique_id=1403689287]
-layout_mode = 0
-offset_left = 41.0
-offset_top = 48.0
-offset_right = 59.0
-offset_bottom = 58.18519
-scale = Vector2(0.926, 1)
-texture_normal = SubResource("CompressedTexture2D_krhq8")
-texture_pressed = ExtResource("3_i5gan")
-texture_hover = ExtResource("3_i5gan")
-ignore_texture_size = true
-stretch_mode = 3
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D" unique_id=1202041727]
+offset_left = -21.0
+offset_top = 39.0
+offset_right = 24.0
+offset_bottom = 53.0
+size_flags_horizontal = 6
+size_flags_vertical = 0
 
-[node name="EXIT" type="TextureButton" parent="." unique_id=2140478870]
-modulate = Color(1, 0.9490196, 0.88235295, 1)
-layout_mode = 0
-offset_left = -59.0
-offset_top = 45.0
-offset_right = -23.0
-offset_bottom = 61.0
-texture_normal = ExtResource("4_251wa")
-texture_pressed = ExtResource("5_h6hdv")
-texture_hover = ExtResource("5_h6hdv")
-stretch_mode = 3
+[node name="Selector" type="Label" parent="Camera2D/HBoxContainer" unique_id=320295552]
+custom_minimum_size = Vector2(7, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2lqaj")
+text = ">"
 
-[connection signal="pressed" from="GO" to="." method="_on_go_pressed"]
-[connection signal="pressed" from="EXIT" to="." method="_on_end_pressed"]
+[node name="Start" type="Label" parent="Camera2D/HBoxContainer" unique_id=1177330865]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2lqaj")
+text = "START"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Camera2D" unique_id=1575078386]
+offset_left = -21.0
+offset_top = 58.0
+offset_right = 19.0
+offset_bottom = 72.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Selector" type="Label" parent="Camera2D/HBoxContainer2" unique_id=392817883]
+custom_minimum_size = Vector2(7, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2lqaj")
+text = ">"
+
+[node name="Exit" type="Label" parent="Camera2D/HBoxContainer2" unique_id=1166820810]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2lqaj")
+text = "EXIT"

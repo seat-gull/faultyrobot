@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://btkpu8xhius7b"]
+
+[ext_resource type="Script" uid="uid://ds3re6fu6br7k" path="res://scenes/cloud.gd" id="1_vlwrh"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8vrlf"]
+normal = Vector2(0, 1)
+
+[node name="Cloud" type="Node2D" unique_id=1323908070 groups=["Cloud", "Player"]]
+script = ExtResource("1_vlwrh")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=489373363 groups=["Player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=130597555]
+shape = SubResource("WorldBoundaryShape2D_8vrlf")
+
+[node name="FiringPoint" type="Node2D" parent="CharacterBody2D" unique_id=139573860 groups=["Player"]]
+unique_name_in_owner = true
+position = Vector2(0, 66)
+scale = Vector2(3.5136366, -70.85297)

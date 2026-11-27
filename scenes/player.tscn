@@ -77,6 +77,7 @@ animations = [{
 radius = 4.1231055
 
 [node name="Player" type="CharacterBody2D" unique_id=1002693678]
+z_index = 5
 collision_layer = 3
 script = SubResource("GDScript_b26j0")
 
@@ -92,3 +93,5 @@ shape = SubResource("CircleShape2D_8vrlf")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1357942658]
 zoom = Vector2(5, 5)
+limit_bottom = 115
+position_smoothing_enabled = true

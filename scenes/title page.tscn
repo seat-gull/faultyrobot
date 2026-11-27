@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://6htldtrf6qph"]
+[gd_scene format=3 uid="uid://dyiaelksl72id"]
 
 [ext_resource type="Script" uid="uid://cv6nqrqudkl0t" path="res://scripts/title_page.gd" id="1_xsg0s"]
 [ext_resource type="Texture2D" uid="uid://do5ggx3sfod5k" path="res://assets/pixil-frame-0 (8).png" id="2_2lqaj"]
@@ -65,3 +65,6 @@ size_flags_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_2lqaj")
 text = "EXIT"
+
+[connection signal="mouse_entered" from="Camera2D/HBoxContainer/Start" to="." method="_on_start_mouse_entered"]
+[connection signal="mouse_entered" from="Camera2D/HBoxContainer2/Exit" to="." method="_on_exit_mouse_entered"]

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://btnaomnucrfi6"]
+
+[ext_resource type="Script" uid="uid://demo8lpo8g5eq" path="res://scenes/rain.gd" id="1_5mvay"]
+[ext_resource type="Texture2D" uid="uid://djc6ynxsx66kc" path="res://assets/pixil-frame-2.png" id="2_rru6j"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8vrlf"]
+radius = 7.0
+height = 22.0
+
+[node name="rain" type="CharacterBody2D" unique_id=1466664546]
+scale = Vector2(3.6173723, 3.189528)
+script = ExtResource("1_5mvay")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=624885909]
+
+[node name="PixilFrame2" type="Sprite2D" parent="." unique_id=171628554]
+position = Vector2(0.5, 1)
+rotation = -1.5687724
+scale = Vector2(1.0277778, 1)
+texture = ExtResource("2_rru6j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2103448842]
+position = Vector2(0, 2)
+rotation = 0.030725615
+shape = SubResource("CapsuleShape2D_8vrlf")
+
+[connection signal="ready" from="." to="." method="_on_ready"]

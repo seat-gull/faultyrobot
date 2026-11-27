@@ -1,9 +1,39 @@
 [gd_scene format=3 uid="uid://7n874mhd5510"]
 
 [ext_resource type="Script" uid="uid://1f8rxrkwdxe4" path="res://scripts/checkpoint.gd" id="1_luqgl"]
+[ext_resource type="Texture2D" uid="uid://mq138qe4845d" path="res://assets/flag.png" id="2_ywqth"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vrlf"]
 size = Vector2(12, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amn8n"]
+atlas = ExtResource("2_ywqth")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukulb"]
+atlas = ExtResource("2_ywqth")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts4f7"]
+atlas = ExtResource("2_ywqth")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vsimk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amn8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukulb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ts4f7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="checkpoint" type="Area2D" unique_id=672425030]
 script = ExtResource("1_luqgl")
@@ -13,6 +43,12 @@ shape = SubResource("RectangleShape2D_8vrlf")
 
 [node name="RespawnPoint" type="Marker2D" parent="." unique_id=1937648438]
 position = Vector2(13, 0)
+
+[node name="flag" type="AnimatedSprite2D" parent="." unique_id=247772696]
+position = Vector2(2, 0)
+scale = Vector2(0.5078125, 0.53125)
+sprite_frames = SubResource("SpriteFrames_vsimk")
+autoplay = "default"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="ready" from="RespawnPoint" to="." method="_on_marker_ready"]
